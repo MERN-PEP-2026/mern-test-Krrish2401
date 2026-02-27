@@ -5,11 +5,7 @@ import connectDB from './config/db.js';
 connectDB();
 
 const server = app.listen(config.port, () => {
-    console.log(`
-
-  Server running in ${config.nodeEnv} mode
-   Port: ${config.port}
-   URL: http://localhost:${config.port}
+    console.log(`Server running in ${config.nodeEnv} mode + Port: ${config.port} + URL: http://localhost:${config.port}
   `);
 });
 
