@@ -1,13 +1,20 @@
 import { Router } from 'express';
+import { register, login, getMe } from '../controllers/auth.controller.js';
+import { protect } from '../middleware/auth.middleware.js';
+import { authLimiter } from '../middleware/rateLimiter.js';
+import {
+  registerValidation,
+  loginValidation,
+  validate,
+} from '../middleware/validation.middleware.js';
 
 const router = Router();
 
-router.post('/register', (req, res) => {
-  res.status(501).json({ message: 'Not implemented yet' });
-});
+// Public routes with stricter rate limiting
+router.post('/register', authLimiter, registerValidation, validate, register);
+router.post('/login', authLimiter, loginValidation, validate, login);
 
-router.post('/login', (req, res) => {
-  res.status(501).json({ message: 'Not implemented yet' });
-});
+// Protected routes
+router.get('/me', protect, getMe);
 
 export default router;
