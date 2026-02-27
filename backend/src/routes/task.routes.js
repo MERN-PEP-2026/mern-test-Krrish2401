@@ -1,16 +1,16 @@
 import { Router } from 'express';
 import {
-  createTask,
-  getTasks,
-  getTask,
-  updateTask,
-  deleteTask,
+    createTask,
+    getTasks,
+    getTask,
+    updateTask,
+    deleteTask,
 } from '../controllers/task.controller.js';
 import { protect } from '../middleware/auth.middleware.js';
 import {
-  createTaskValidation,
-  updateTaskValidation,
-  validate,
+    createTaskValidation,
+    updateTaskValidation,
+    validate,
 } from '../middleware/validation.middleware.js';
 
 const router = Router();
