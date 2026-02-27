@@ -19,7 +19,7 @@ app.use(
         allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
     })
 );
-// app.use(helmet());
+app.use(helmet());
 if (config.nodeEnv === 'development') {
     app.use(morgan('dev'));
 } else {

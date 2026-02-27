@@ -10,11 +10,9 @@ import {
 
 const router = Router();
 
-// Public routes with stricter rate limiting
 router.post('/register', authLimiter, registerValidation, validate, register);
 router.post('/login', authLimiter, loginValidation, validate, login);
 
-// Protected routes
 router.get('/me', protect, getMe);
 
 export default router;
