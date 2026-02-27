@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import TaskForm from './TaskForm';
 
-const TaskItem = ({ task, onUpdate, onDelete }) => {
+const TaskItem = ({ task, index = 0, onUpdate, onDelete }) => {
     const [editing, setEditing] = useState(false);
 
     const handleStatusToggle = () => {
@@ -17,7 +17,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
 
     if (editing) {
         return (
-            <div className="task-item editing">
+            <div className="task-item editing" style={{ ['--stagger']: index }}>
                 <TaskForm
                     initialData={task}
                     onSubmit={handleEdit}
@@ -28,7 +28,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
     }
 
     return (
-        <div className={`task-item ${task.status}`}>
+        <div className={`task-item ${task.status}`} style={{ ['--stagger']: index }}>
             <div className="task-content">
                 <div className="task-header">
                     <input

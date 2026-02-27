@@ -29,6 +29,9 @@ const Register = () => {
     return (
         <div className="auth-container">
             <div className="auth-box">
+                <div className="brand">
+                    <img className="brand-logo" src="/logo.png" alt="FocusFlow" />
+                </div>
                 <h1>Register</h1>
                 {error && <div className="error">{error}</div>}
                 <form onSubmit={handleSubmit}>

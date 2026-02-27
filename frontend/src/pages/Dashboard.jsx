@@ -57,7 +57,13 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <header className="dashboard-header">
-                <h1>Task Manager</h1>
+                <div className="dashboard-brand">
+                    <img src="/logo.png" alt="FocusFlow" />
+                    <div className="dashboard-brand-title">
+                        <strong>FocusFlow</strong>
+                        <span>Stay on track, effortlessly</span>
+                    </div>
+                </div>
                 <div className="user-info">
                     <span>Welcome, {user?.name}</span>
                     <button onClick={logout} className="btn-logout">
